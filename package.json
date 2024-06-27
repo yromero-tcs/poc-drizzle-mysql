@@ -2,15 +2,21 @@
   "name": "poc-drizzle-mysql",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "generate": "drizzle-kit generate",
+    "migrate": "drizzle-kit migrate"
   },
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.4"
+    "drizzle-orm": "^0.31.2",
+    "mysql2": "^3.10.1"
+  },
+  "packageManager": "npm@9.2.0",
+  "volta": {
+    "node": "18.17.1",
+    "npm": "9.2.0"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.22.7"
   }
 }
