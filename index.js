@@ -12,9 +12,9 @@ const connection = await mysql.createConnection({
 });
 const db = drizzle(connection);
 
-// await migrate (db, { migrationsFolder: 'drizzle'}); // needed for first run to create table
-await db.delete(users);
-await db.insert(users).values({uid: '765432', status: 'complete'});
-const result = await db.select().from(users);
-console.log(result);
+await migrate (db, { migrationsFolder: 'drizzle'}); // needed for first run to create table
+// await db.delete(users);
+// await db.insert(users).values({uid: '765432', status: 'complete'});
+// const result = await db.select().from(users);
+// console.log(result);
 await connection.end();

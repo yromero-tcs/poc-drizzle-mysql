@@ -1,11 +1,11 @@
 {
   "version": "5",
   "dialect": "mysql",
-  "id": "fc6f22fb-08a0-45e7-971e-fc7d6912747d",
+  "id": "065f8150-2265-4a1a-89a3-e34053a7e951",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
-    "users": {
-      "name": "users",
+    "poc_client": {
+      "name": "poc_client",
       "columns": {
         "uid": {
           "name": "uid",
@@ -25,8 +25,8 @@
       "indexes": {},
       "foreignKeys": {},
       "compositePrimaryKeys": {
-        "users_uid": {
-          "name": "users_uid",
+        "poc_client_uid": {
+          "name": "poc_client_uid",
           "columns": [
             "uid"
           ]

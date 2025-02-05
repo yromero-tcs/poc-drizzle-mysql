@@ -1,6 +1,6 @@
 import { mysqlTable, varchar, mysqlEnum } from "drizzle-orm/mysql-core";
 
-export const users = mysqlTable('users', {
+export const users = mysqlTable('poc_client', {
   uid: varchar("uid", { length: 100 }).primaryKey(),
   status: mysqlEnum('status', ['complete', 'incomplete']).notNull()
 });
