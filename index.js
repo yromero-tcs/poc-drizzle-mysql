@@ -1,7 +1,6 @@
 import { drizzle } from 'drizzle-orm/mysql2';
 import mysql from 'mysql2/promise';
 import { migrate } from 'drizzle-orm/mysql2/migrator';
-import { users } from './src/schema.js';
 
 const connection = await mysql.createConnection({
   host: 'poc-drizzle-mysql.cxvxrklpvvsf.us-east-2.rds.amazonaws.com',
