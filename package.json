@@ -17,6 +17,7 @@
     "npm": "9.2.0"
   },
   "devDependencies": {
+    "dotenv": "^16.4.5",
     "drizzle-kit": "^0.22.7"
   }
 }
