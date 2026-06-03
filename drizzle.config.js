@@ -13,34 +13,17 @@ import { defineConfig } from "drizzle-kit";
  *   DB_PASSWORD=<from Secrets Manager or your vault>
  *   DB_NAME=rdsuidmysqldb
  */
-// export default defineConfig({
-//   dialect: "mysql",
-//   schema: "./src/schema.js",
-//   out: "./drizzle",
-//   dbCredentials: {
-//     host: process.env.DB_HOST ?? "127.0.0.1",
-//     port: Number(process.env.DB_PORT ?? "13306"),
-//     user: process.env.DB_USER,
-//     password: process.env.DB_PASSWORD,
-//     database: process.env.DB_NAME ?? "rdsuidmysqldb",
-//     // Required for RDS Proxy (RequireTLS: true); tunnel is TCP-only, TLS is still negotiated with the proxy.
-//     ssl: { rejectUnauthorized: true },
-//   },
-// });
-
-
 export default defineConfig({
   dialect: "mysql",
   schema: "./src/schema.js",
   out: "./drizzle",
   dbCredentials: {
-    url: 'mysql://admin:fedev212718@rds-uid-mysql-db.cjkmoqdvi64y.eu-central-1.rds.amazonaws.com:3306/rdsuidmysqldb',
-  }
+    host: process.env.DB_HOST ?? "127.0.0.1",
+    port: Number(process.env.DB_PORT ?? "13306"),
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME ?? "rdsuidmysqldb",
+    // Required for RDS Proxy (RequireTLS: true); tunnel is TCP-only, TLS is still negotiated with the proxy.
+    ssl: { rejectUnauthorized: true },
+  },
 });
-
-
-// mysql://admin:fedev212718@rds-uid-mysql-db.cdlybsqjew8w.us-east-1.rds.amazonaws.com:3306/rdsuidmysqldb
-// mysql://admin:fedev212718@rds-uid-mysql-db.cxvxrklpvvsf.us-east-2.rds.amazonaws.com:3306/rdsuidmysqldb
-// mysql://admin:fedev212718@rds-uid-mysql-db.crohmnohwnvk.ca-central-1.rds.amazonaws.com:3306/rdsuidmysqldb
-// mysql://admin:fedev212718@rds-uid-mysql-db.cjkmoqdvi64y.eu-central-1.rds.amazonaws.com:3306/rdsuidmysqldb
-// mysql://admin:fedev212718@rds-uid-mysql-db.cnaexaeabavm.ap-southeast-2.rds.amazonaws.com:3306/rdsuidmysqldb
